@@ -8,7 +8,8 @@ let error_toast = function(msg, classes='red darken-1', out_duration=500) {
 
 window.addEventListener('DOMContentLoaded', function() {
 
-  const request = new XMLHttpRequest();
+  const request_json = new XMLHttpRequest();
+  const request_api = new XMLHttpRequest();
 
   const sidenav = document.querySelectorAll('.sidenav');
   const sidenav_instances = M.Sidenav.init(sidenav);
@@ -76,11 +77,11 @@ window.addEventListener('DOMContentLoaded', function() {
     'bedroom' : ''
   };
 
-  request.open('GET','./api_config.json');
-  request.responseType = 'json';
-  request.send();
-  request.onload = function() {
-    const config_json = request.response;
+  request_json.open('GET','./api_config.json');
+  request_json.responseType = 'json';
+  request_json.send();
+  request_json.onload = function() {
+    const config_json = request_json.response;
 
     api_url['living'] = `http://${config_json['living']['server_address']}:${config_json['living']['server_port']}/api/`;
     api_url['middle'] = `http://${config_json['middle']['server_address']}:${config_json['middle']['server_port']}/api/`;
@@ -149,13 +150,13 @@ window.addEventListener('DOMContentLoaded', function() {
     const optgroup = document.getElementById('opt_' + select_api.value).parentNode;
     const query = `?api_uri=${api_url[optgroup.label]}${select_api.value}&time=${time_str}`;
     console.log(query);
-    request.open('GET',`https://home.nabetta.com/api/schedule/regist${query}`);
-    request.responseType = ''; // text
+    request_api.open('GET',`https://home.nabetta.com/api/schedule/regist${query}`);
+    request_api.responseType = ''; // text
 
-    request.send();
-    request.onreadystatechange = function() {
-      if (request.readyState === 4 && request.status === 200) {
-        console.log(request.responseText);
+    request_api.send();
+    request_api.onreadystatechange = function() {
+      if (request_api.readyState === 4 && request_api.status === 200) {
+        console.log(request_api.responseText);
       }
     }
   }, false);
@@ -172,21 +173,5 @@ window.addEventListener('DOMContentLoaded', function() {
   btn_delete.addEventListener('click', function(){
 
   }, false);
-
-  function onClick(id) {
-    let url_str = '';
-    if(window.navigator && window.navigator.vibrate){
-      window.navigator.vibrate(200);
-    }
-
-    request.open('GET', url_str, true);
-    request.send();
-
-    request.onreadystatechange = function() {
-      if (request.readyState === 4 && request.status === 200) {
-
-      }
-    }
-  }
 
 }, false);
