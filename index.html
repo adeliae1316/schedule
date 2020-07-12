@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang=ja>
+
+<head>
+  <title>Schedule API</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="homeapi, flask, uwsgi, nginx, python">
+  <meta name="description" content="Schedule API powered by flask, nginx, uwsgi library">
+  <meta name="author" content="adeliae1316">
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#62a582">
+  <link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#62a582">
+  <meta name="msapplication-config" content="./assets/img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- bluma conflicts with materialize -->
+  <link rel="stylesheet" href="./assets/css/schedule.css">
+  <!-- icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- javascript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script> -->
+  <script src="./assets/js/materialize_fixed.js"></script>
+  <script src="./assets/js/schedule.js"></script>
+</head>
+
+<body>
+  <header></header>
+  <article>
+    <h1 id="logo" data-target="slide-out" class="sidenav-trigger">Schedule</h1>
+
+    <div class="row">
+      <div class="col s12">
+        <!-- Select -->
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Select Time</span>
+            <input type="text" id="timepicker">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Select API</span>
+            <div class="row">
+              <div class="input-field col s12">
+                <select id="select_api">
+                  <optgroup label="living" id="og_living"></optgroup>
+                  <optgroup label="middle" id="og_middle"></optgroup>
+                  <optgroup label="bedroom" id="og_bedroom"></optgroup>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="card-action">
+            <div class="row">
+              <div class="col s4"></div>
+              <button class="btn waves-effect waves-light col s4" name="action" id="btn_regist">Regist
+                <i class="material-icons right">playlist_add</i>
+              </button>
+              <div class="col s4"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Registered API -->
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Registered API</span>
+            <div class="collection">
+              <div class="collection-item registered-item row">
+                <div class="col s3 m3 l3 ta-center"><p>18:53</p></div>
+                <div class="col s2 m2 l2"></div>
+                <div class="col s7 m7 l7"><p>daikin_cool</p></div>
+              </div>
+              <div class="collection-item registered-item row">
+                <div class="col s3 m3 l3 ta-center"><p>20:40</p></div>
+                <div class="col s2 m2 l2"></div>
+                <div class="col s7 m7 l7"><p>living_on</p></div>
+              </div>
+              <div class="collection-item registered-item row">
+                <div class="col s3 m3 l3 ta-center"><p>23:10</p></div>
+                <div class="col s2 m2 l2"></div>
+                <div class="col s7 m7 l7"><p>daikin_off</p></div>
+              </div>
+              <div class="collection-item registered-item row">
+                <div class="col s3 m3 l3 ta-center"><p>23:10</p></div>
+                <div class="col s2 m2 l2"></div>
+                <div class="col s7 m7 l7"><p>living_on</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-action">
+            <div class="row">
+              <div class="col s1"></div>
+              <button class="btn waves-effect waves-light col s4" name="action" id="btn_renew">Renew
+                <i class="material-icons right">autorenew</i>
+              </button>
+              <div class="col s2"></div>
+              <button class="btn waves-effect waves-light col s4" name="action" id="btn_delete">Delete
+                <i class="material-icons right">delete</i>
+              </button>
+              <div class="col s1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sidenav -->
+    <ul id="slide-out" class="sidenav collapsible">
+      <li><a class="subheader">Schedule</a></li>
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">settings</i>Settings
+        </div>
+        <div class="collapsible-body bg-250">
+          <div class="switch">
+            <label class="row">
+              <div class="col s3">
+                twelveHour
+              </div>
+              <div class="col s7">
+                <input type="checkbox" checked="checked" id="cb_twelveHour">
+                <span class="lever"></span>
+              </div>
+            </label>
+          </div>
+          <div class="switch">
+            <label class="row">
+              <div class="col s3">
+                manualInput
+              </div>
+              <div class="col s7">
+                <input type="checkbox" id="cb_manualInput">
+                <span class="lever"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </article>
+  <footer></footer>
+</body>
+
+</html>

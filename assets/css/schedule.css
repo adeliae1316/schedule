@@ -1,0 +1,425 @@
+/* For Common Setting */
+html {
+  font-family: 'Ubuntu', sans-serif;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+#power_icon { font-size: 70px; }
+
+/* margin: topbottom leftright; */
+/* margin: top leftright bottom; */
+/* margin: top right bottom left; */
+
+.margin-left { margin-left: 20px; }
+.bg-250 { background-color: rgb(250, 250, 250) !important; }
+.bg-transparent { background-color: transparent !important; }
+.border-none { border: none; }
+.ta-center { text-align: center; }
+.row { margin-bottom: auto; }
+h1 { padding: 0 .75rem; }
+
+.display-none { display: none!important; }
+.flex-center { display: flex; justify-content: center; align-content: center; }
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+}
+.visibility-hidden { box-shadow: 0 0 0 rgb(255, 255, 255); visibility: hidden; }
+.component { border-radius: 10px; background-color: rgb(255, 255, 255); }
+
+/* For Smartphone */
+html { margin: auto 4.0vw; }
+h1 { font-size: 30px; }
+
+.item {
+  box-shadow: 3px 3px 3px rgb(230, 230, 230);
+  width: 28vw;
+  margin: 0 2.0vw 2.0vw 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 1.0vw;
+  justify-content: space-around;
+  margin: 2.0vw;
+}
+
+#grid-container-mitsubishi {
+  grid-template-rows: repeat(9, 20vw);
+  grid-template-columns: repeat(6, 15vw);
+}
+
+#grid-container-sonytv {
+  grid-template-rows: repeat(7, 20vw);
+  grid-template-columns: repeat(6, 15vw);
+}
+
+#grid-container-sonybd {
+  grid-template-rows: repeat(6, 20vw);
+  grid-template-columns: repeat(6, 15vw);
+}
+
+.power-on { grid-row: 1/2; grid-column: 1/3; padding: 2.0vw; }
+.input-switch { grid-row: 2/3; grid-column: 1/3; padding: 2.0vw; }
+.component-volume {
+  grid-column: 3/5;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+.component-channel {
+  grid-column: 5/7;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+
+.volup { grid-row: 1/2; padding: 2.0vw; }
+.voldown { grid-row: 2/3; padding: 2.0vw; }
+
+.chup { grid-row: 1/2; padding: 2.0vw; }
+.chdown { grid-row: 2/3; padding: 2.0vw; }
+
+.guide { grid-row: 3/4; grid-column: 1/4; padding: 2.0vw; }
+.watch { grid-row: 3/4; grid-column: 4/7; padding: 2.0vw; }
+
+.component-cross {
+  grid-row: 4/6;
+  grid-column: 1/5;
+  display: grid;
+  grid-template-rows: 33% 33% 33%;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.arrowup { grid-row: 1/2; grid-column:2/3; }
+.arrowleft { grid-row: 2/3; grid-column:1/2; }
+.arrowright { grid-row: 2/3; grid-column:3/4; }
+.arrowdown { grid-row: 3/4; grid-column:2/3; }
+
+.arrowok { grid-row: 4/5; grid-column:5/7; padding: 2.0vw; }
+.return { grid-row: 5/6; grid-column: 5/7; padding: 2.0vw; }
+
+.rewind { grid-row: 6/7; grid-column: 1/3; padding: 2.0vw; }
+.play { grid-row: 6/7; grid-column: 3/5; padding: 2.0vw; }
+.fastforward { grid-row: 6/7; grid-column: 5/7; padding: 2.0vw; }
+.stop { grid-row: 7/8; grid-column: 1/3; padding: 2.0vw; }
+.resume { grid-row: 7/8; grid-column: 3/5; padding: 2.0vw; }
+.eject { grid-row: 7/8; grid-column: 5/7; padding: 2.0vw; }
+
+#grid-channels-mitsubishi {
+  grid-row: 8/10;
+  grid-column: 1/7;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+#grid-channels-sonytv {
+  grid-row: 6/8;
+  grid-column: 1/7;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.channel-mitsubishi { padding: 4.0vw 2.0vw; }
+.channel-sonytv { padding: 4.0vw 2.0vw; }
+
+/* Sony BD Player */
+#sonybd_on { grid-row: 1/2; grid-column: 1/3; }
+#sonybd_guide { grid-row: 1/2; grid-column: 3/5; }
+#sonybd_home { grid-row: 1/2; grid-column: 5/7; }
+#component_sonybd_cross { grid-row: 2/4; grid-column: 1/5; }
+#sonybd_ok { grid-row: 2/3; grid-column:5/7; }
+#sonybd_return { grid-row: 3/4; grid-column: 5/7; }
+#sonybd_skipbefore { grid-row: 4/5; grid-column:1/3; padding: 2.0vw; }
+#sonybd_rewind10sec { grid-row: 4/5; grid-column:3/4; padding: 2.0vw; }
+#sonybd_ff15sec { grid-row: 4/5; grid-column: 4/5; padding: 2.0vw; }
+#sonybd_skipafter { grid-row: 4/5; grid-column:5/7; padding: 2.0vw; }
+#sonybd_rewind { grid-row: 5/6; grid-column: 1/3; }
+#sonybd_play { grid-row: 5/6; grid-column: 3/5;}
+#sonybd_fastforward { grid-row: 5/6; grid-column: 5/7; }
+#sonybd_stop { grid-row: 6/7; grid-column: 1/3; }
+#sonybd_pause { grid-row: 6/7; grid-column: 3/5; }
+#sonybd_eject { grid-row: 6/7; grid-column: 5/7; }
+
+.material-icons.icon-size { font-size: 48px; }
+
+/* width > 370 */
+@media (min-width: 370px) {
+  .material-icons.icon-size { font-size: 56px; }
+}
+
+/* width > 410 */
+@media (min-width: 410px) {
+  .material-icons.icon-size { font-size: 64px; }
+}
+
+/* For Tablet */
+/* width > 600 */
+@media (min-width: 600px) {
+  .component { border-radius: 3px; background-color: rgb(255, 255, 255); }
+
+  h1 { font-size: 40px; }
+
+  .item {
+    box-shadow: 3px 3px 3px rgb(230, 230, 230);
+    width: 16vw;
+    margin: 0 2.0vw 2.0vw 0;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-gap: 1.0vw;
+    justify-content: space-around;
+    margin: 2.0vw;
+  }
+
+  #grid-container-mitsubishi {
+    grid-template-rows: repeat(8, 15vw);
+    grid-template-columns: repeat(6, 15vw);
+  }
+
+  #grid-container-sonytv {
+    grid-template-rows: repeat(6, 15vw);
+    grid-template-columns: repeat(6, 15vw);
+  }
+
+  #grid-container-sonybd {
+    grid-template-rows: repeat(6, 15vw);
+    grid-template-columns: repeat(6, 15vw);
+  }
+
+  .power-on { grid-row: 1/2; grid-column: 2/3; padding: 3.0vw; }
+  .input-switch { grid-row: 1/2; grid-column: 3/4; padding: 3.0vw; }
+  .component-volume {
+    grid-column: 4/5;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+  }
+  .component-channel {
+    grid-column: 5/6;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+  }
+
+  .volup { grid-row: 1/2; grid-column: 1/2; padding: 3.0vw; }
+  .voldown { grid-row: 2/3; grid-column: 1/2; padding: 3.0vw; }
+
+  .chup { grid-row: 1/2; grid-column: 1/2; padding: 3.0vw; }
+  .chdown { grid-row: 2/3; grid-column: 1/3; padding: 3.0vw; }
+
+  .guide { grid-row: 2/3; grid-column: 2/3; padding: 3.0vw; }
+  .watch { grid-row: 2/3; grid-column: 3/4; padding: 3.0vw; }
+
+  .component-cross {
+    grid-row: 3/5;
+    grid-column: 2/4;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  .arrowup { grid-row: 1/2; grid-column:2/3; }
+  .arrowleft { grid-row: 2/3; grid-column:1/2; }
+  .arrowright { grid-row: 2/3; grid-column:3/4; }
+  .arrowdown { grid-row: 3/4; grid-column:2/3; }
+
+  .arrowok { grid-row: 3/4; grid-column:4/6; padding: 3.0vw; }
+  .return { grid-row: 4/5; grid-column: 4/6; padding: 3.0vw; }
+
+  .rewind { grid-row: 5/6; grid-column: 2/3; padding: 3.0vw; }
+  .play { grid-row: 5/6; grid-column: 3/5; padding: 3.0vw; }
+  .fastforward { grid-row: 5/6; grid-column: 5/6; padding: 3.0vw; }
+  .stop { grid-row: 6/7; grid-column: 2/3; padding: 3.0vw; }
+  .resume { grid-row: 6/7; grid-column: 3/5; padding: 3.0vw; }
+  .eject { grid-row: 6/7; grid-column: 5/6; padding: 3.0vw; }
+
+  #grid-channels-mitsubishi {
+    grid-row: 7/9;
+    grid-column: 2/6;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  #grid-channels-sonytv {
+    grid-row: 5/7;
+    grid-column: 2/6;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  .channel-mitsubishi { padding: 3.0vw 1.0vw; }
+  .channel-sonytv { padding: 3.0vw 1.0vw; }
+
+  /* Sony BD Player */
+  #sonybd_on { grid-row: 1/2; grid-column: 1/3; }
+  #sonybd_guide { grid-row: 1/2; grid-column: 3/5; }
+  #sonybd_home { grid-row: 1/2; grid-column: 5/7; }
+  #component_sonybd_cross { grid-row: 2/4; grid-column: 1/5; }
+  #sonybd_ok { grid-row: 2/3; grid-column:5/7; }
+  #sonybd_return { grid-row: 3/4; grid-column: 5/7; }
+  #sonybd_skipbefore { grid-row: 4/5; grid-column:1/3; padding: 3.0vw; }
+  #sonybd_rewind10sec { grid-row: 4/5; grid-column:3/4; padding: 3.0vw; }
+  #sonybd_ff15sec { grid-row: 4/5; grid-column: 4/5; padding: 3.0vw; }
+  #sonybd_skipafter { grid-row: 4/5; grid-column:5/7; padding: 3.0vw; }
+  #sonybd_rewind { grid-row: 5/6; grid-column: 1/3; }
+  #sonybd_play { grid-row: 5/6; grid-column: 3/5;}
+  #sonybd_fastforward { grid-row: 5/6; grid-column: 5/7; }
+  #sonybd_stop { grid-row: 6/7; grid-column: 1/3; }
+  #sonybd_pause { grid-row: 6/7; grid-column: 3/5; }
+  #sonybd_eject { grid-row: 6/7; grid-column: 5/7; }
+
+  .material-icons.icon-size { font-size: 64px; }
+
+}
+
+/* For PC */
+/* width > 769 */
+@media (min-width: 769px) {
+  .modal-content { width: 80vw; }
+
+  html { margin: auto 2.0vw; }
+  h1 { font-size: 40px; }
+  img { width: 100%; }
+
+  .item {
+    box-shadow: 3px 3px 3px rgb(230, 230, 230);
+    width: 15vw;
+    margin: 0 1.0vw 0 0;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-gap: 1.0vw;
+    justify-content: space-around;
+    margin: 2.0vw;
+  }
+
+  #grid-container-mitsubishi {
+    grid-template-rows: repeat(6, 5vw);
+    grid-template-columns: repeat(8, 12%);
+  }
+
+  #grid-container-sonytv {
+    grid-template-rows: repeat(4, 5vw);
+    grid-template-columns: repeat(8, 12%);
+  }
+
+  #grid-container-sonybd {
+    grid-template-rows: repeat(6, 5vw);
+    grid-template-columns: repeat(8, 12%);
+  }
+
+  .power-on { grid-row: 1/2; grid-column: 2/3; padding: .5vw; }
+  .input-switch { grid-row: 1/2; grid-column: 3/4; padding: .5vw; }
+  .component-volume {
+    grid-column: 4/5;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+  }
+  .component-channel {
+    grid-column: 5/6;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+  }
+
+  .volup { grid-row: 1/2; grid-column: 1/2; padding: .5vw; }
+  .voldown { grid-row: 2/3; grid-column: 1/2; padding: .5vw; }
+
+  .chup { grid-row: 1/2; grid-column: 1/2; padding: .5vw; }
+  .chdown { grid-row: 2/3; grid-column: 1/3; padding: .5vw; }
+
+  .guide { grid-row: 2/3; grid-column: 2/3; padding: .5vw; }
+  .watch { grid-row: 2/3; grid-column: 3/4; padding: .5vw; }
+
+  .component-cross {
+    grid-row: 3/5;
+    grid-column: 2/4;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  .arrowup { grid-row: 1/2; grid-column:2/3; }
+  .arrowleft { grid-row: 2/3; grid-column:1/2; }
+  .arrowright { grid-row: 2/3; grid-column:3/4; }
+  .arrowdown { grid-row: 3/4; grid-column:2/3; }
+
+  .arrowok { grid-row: 3/4; grid-column:4/6; padding: .5vw; }
+  .return { grid-row: 4/5; grid-column: 4/6; padding: .5vw; }
+
+  .rewind { grid-row: 5/6; grid-column: 2/3; padding: .5vw; }
+  .play { grid-row: 5/6; grid-column: 3/5; padding: .5vw; }
+  .fastforward { grid-row: 5/6; grid-column: 5/6; padding: .5vw; }
+  .stop { grid-row: 6/7; grid-column: 2/3; padding: .5vw; }
+  .resume { grid-row: 6/7; grid-column: 3/5; padding: .5vw; }
+  .eject { grid-row: 6/7; grid-column: 5/6; padding: .5vw; }
+
+  #grid-channels-mitsubishi {
+    grid-row: 1/7;
+    grid-column: 6/8;
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 50% 50%;
+  }
+
+  #grid-channels-sonytv {
+    grid-row: 1/5;
+    grid-column: 6/8;
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 50% 50%;
+  }
+
+  .channel-mitsubishi { padding: 1.4vw .6vw; }
+  .channel-sonytv { padding: .4vw 1.0vw; }
+
+  /* Sony BD Player */
+  #sonybd_on { grid-row: 1/2; grid-column: 2/4; }
+  #sonybd_guide { grid-row: 1/2; grid-column: 4/6; }
+  #sonybd_home { grid-row: 1/2; grid-column: 6/8; }
+  #component_sonybd_cross { grid-row: 2/4; grid-column: 2/6; }
+  #sonybd_ok { grid-row: 2/3; grid-column:6/8; }
+  #sonybd_return { grid-row: 3/4; grid-column: 6/8; }
+  #sonybd_skipbefore { grid-row: 4/5; grid-column:2/4; padding: .5vw; }
+  #sonybd_rewind10sec { grid-row: 4/5; grid-column:4/5; padding: .5vw; }
+  #sonybd_ff15sec { grid-row: 4/5; grid-column: 5/6; padding: .5vw; }
+  #sonybd_skipafter { grid-row: 4/5; grid-column:6/8; padding: .5vw; }
+  #sonybd_rewind { grid-row: 5/6; grid-column: 2/4; }
+  #sonybd_play { grid-row: 5/6; grid-column: 4/6;}
+  #sonybd_fastforward { grid-row: 5/6; grid-column: 6/8; }
+  #sonybd_stop { grid-row: 6/7; grid-column: 2/4; }
+  #sonybd_pause { grid-row: 6/7; grid-column: 4/6; }
+  #sonybd_eject { grid-row: 6/7; grid-column: 6/8; }
+
+  .material-icons.icon-size { font-size: 36px; }
+}
+
+/* width > 1080 */
+@media (min-width: 1080px) {
+  .material-icons.icon-size { font-size: 48px; }
+}
+
+/* width > 1280 */
+@media (min-width: 1280px) {
+  .material-icons.icon-size { font-size: 60px; }
+}
+
+/* width > 1440 */
+@media (min-width: 1440px) {
+  .material-icons.icon-size { font-size: 64px; }
+}
