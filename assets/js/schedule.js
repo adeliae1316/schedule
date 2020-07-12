@@ -149,7 +149,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const optgroup = document.getElementById('opt_' + select_api.value).parentNode;
     const query = `?api_uri=${api_url[optgroup.label]}${select_api.value}&time=${time_str}`;
     console.log(query);
-    request.open('GET',`https://home.nabetta.com/schedule/regist/${query}`);
+    request.open('GET',`https://home.nabetta.com/api/schedule/regist${query}`);
     request.responseType = ''; // text
 
     request.send();
